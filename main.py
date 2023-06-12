@@ -1,6 +1,5 @@
-from UsersTable import UserData
-from MarksUpdate import UserMarks
-        
+from UsersInfo import UserData
+from MarksInfo import UserMarks       
 #main coding
 
 Basic_Data=UserData()
@@ -17,7 +16,7 @@ if choice==1:
     print("To Display a single Student's Information: Press 2")
     print("To Display all the Student's Information: Press 3")
     print("To insert a Student's data: Press 4")
-    print("To edit a Student's Phone_number: Press 5")
+    print("To edit a Student's PhoneNumber_number: Press 5")
     input_1=int(input("Enter your choice: "))
     if input_1==1:
         x=int(input("Enter the Student_ID"))
@@ -29,13 +28,13 @@ if choice==1:
         Basic_Data.Fetch_All()
     elif input_1==4:
         userid=int(input("Enter the Student id: "))
-        userName=input("Enter the Name of the Student: ")
-        phone=int(input("Enter the Phone number of the Student: "))
-        Basic_Data.insert_user(userid, userName, phone)
+        StudentName=input("Enter the Name of the Student: ")
+        PhoneNumber=int(input("Enter the PhoneNumber number of the Student: "))
+        Basic_Data.insert_user(userid, StudentName, PhoneNumber)
     elif input_1==5:
-        phone=int(input())
+        PhoneNumber=int(input())
         userid=int(input())
-        Basic_Data.Edit_user_Phone(phone, userid)
+        Basic_Data.Edit_user_PhoneNumber(PhoneNumber, userid)
 elif choice==2:
     
     print("To Insert marks of a Student: Press 1")
@@ -77,6 +76,6 @@ elif choice==2:
 
 
         # userid=int(input("Enter the user id: "))
-        # userName=input("Enter the Name of the user: ")
-        # phone=int(input("Enter the Phone number of the user: "))
-        # Basic_Data.insert_user(userid, userName, phone)
+        # StudentName=input("Enter the Name of the user: ")
+        # PhoneNumber=int(input("Enter the PhoneNumber number of the user: "))
+        # Basic_Data.insert_user(userid, StudentName, PhoneNumber)
