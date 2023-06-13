@@ -1,9 +1,9 @@
-from UsersInfo import UserData
-from MarksInfo import UserMarks       
+from StudentInfo import StudentData
+from MarksInfo import StudentMarks       
 #main coding
 
-Basic_Data=UserData()
-Student_Marks=UserMarks()
+Basic_Data=StudentData()
+Student_Marks=StudentMarks()
 
 print("To edit Student information: Press 1")
 print("To edit Student Marks: Press 2")

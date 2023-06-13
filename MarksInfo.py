@@ -1,5 +1,5 @@
 import mysql.connector as connector
-class UserMarks:
+class StudentMarks:
     def __init__(self):
         self.con=con=connector.connect(host='localhost',port='3306',user='root',password='8851039311',database='StudentRecord')
 
