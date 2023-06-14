@@ -1,6 +1,8 @@
 from StudentInfo import StudentData
-from MarksInfo import StudentMarks       
+from MarksInfo import StudentMarks   
+import tabulate    
 #main coding
+
 
 Basic_Data=StudentData()
 Student_Marks=StudentMarks()

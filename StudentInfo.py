@@ -30,14 +30,17 @@ class StudentData:
         self.Execute(query4)
     #fetch all
     def Fetch_All(self):
-        query="select * from StudentTable "
-        cur=self.con.cursor()
+        query = "SELECT * FROM StudentTable"
+        cur = self.con.cursor()
         cur.execute(query)
-        for row in cur:
-            print("Registration Number: ",row[0])
-            print("Student Name: ",row[1])
-            print("Studen PhoneNumber: ",row[2])
+        rows = cur.fetchall()
 
+        headers = ["RegistrationNumber", "StudentName", "PhoneNumber"]
+        table_data = []
+        for row in rows:
+            table_data.append(row)
+
+        print(tabulate(table_data, headers, tablefmt="grid"))
     def Fetch_single(self,RegistrationNumber):
         query="select * from StudentTable where RegistrationNumber={}".format(RegistrationNumber)
         cur=self.con.cursor()
