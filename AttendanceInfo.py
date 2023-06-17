@@ -15,17 +15,21 @@ class StudentAttendance:
         cur.execute(query)
         self.con.commit()
     def Mark_present(self,RegistrationNumber,value):
-        query1="Select Present from attendance_record where RegistrationNumber={}".format(RegistrationNumber)
-        cur=self.con.cursor()
-        present=cur.execute(query)+value
-        
-        query2="Update attendance_record set Present ={} where RegistrationNumber={}".format(Present,RegistrationNumber)
+        query1 = "SELECT Present FROM attendance_record WHERE RegistrationNumber = {}".format(RegistrationNumber)
+        cur = self.con.cursor()
+        cur.execute(query1)
+        present = cur.fetchone()[0] + value
+
+        query2 = "UPDATE attendance_record SET Present = {} WHERE RegistrationNumber = {}".format(present, RegistrationNumber)
         self.Execute(query2)
+
     def Mark_absent(self,RegistrationNumber,value):
-        query1="Select Absent from attendance_record where RegistrationNumber={}".format(RegistrationNumber)
-        cur=self.con.cursor()
-        Absent=cur.execute(query)+value
-        
-        query2="Update attendance_record set Absent ={} where RegistrationNumber={}".format(Absent,RegistrationNumber)
+        query1 = "SELECT Absent FROM attendance_record WHERE RegistrationNumber = {}".format(RegistrationNumber)
+        cur = self.con.cursor()
+        cur.execute(query1)
+        absent = cur.fetchone()[0] + value
+    
+        query2 = "UPDATE attendance_record SET Absent = {} WHERE RegistrationNumber = {}".format(absent, RegistrationNumber)
         self.Execute(query2)
+
         
