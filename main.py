@@ -28,6 +28,12 @@ def Level3():
     print("To Display Marks of all the Student's: Press 3")
     print("To Edit Subject marks of a student: Press 4")
     print("Exit: Press 6")
+    
+def Level4():
+    print("To Mark Present: Press 1")
+    print("To Mark Absent: Press 2")
+    print("Exit: Press 6")
+
  
 choice=0
 Level1()
@@ -100,3 +106,20 @@ while choice!=6:
                     Student_Marks.update_physics_marks(input_5, input_3)
                 elif input_4==4:
                     Student_Marks.update_english_marks(input_5, input_3)
+
+    elif choice==3:
+        input_1=0
+        
+        while input_1!=6:
+            Level4()
+            input_1=int(input("Enter the Choicee: "))
+
+            if input_1==1:
+                values = input("Enter comma-separated values: ").split(',')
+                for i in (values):
+                    StudentAttendance.Mark_present(i,1)
+
+            elif input_1==2:
+                values = input("Enter comma-separated values: ").split(',')
+                for i in (values):
+                    StudentAttendance.Mark_absent(i,1)
